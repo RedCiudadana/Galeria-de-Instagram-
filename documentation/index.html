@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Instagram Fancybox - jQuery Plugin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+		
+	<!-- Pretty Code -->
+	<link href="js/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="js/google-code-prettify/prettify.js"></script>
+
+    <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/demo.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/demo.js"></script>
+	
+  </head>
+
+  <body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="#">Simple Instagram Fancybox - jQuery Plugin</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li class="active"><a href="#">Home</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="hero-unit">
+			<h1>Simple Instagram Fancybox</h1>
+			<p>
+				Capture and share the world's moments with Simple Instagram Fancybox. A powerful, versatile plugin that allows you to display your 
+				Instagram photos on a website or blog-- leveraging the full power of the Instagram API.
+			</p>
+			<p><a class="btn btn-large btn-success start-demo">Get Started »</a></p>
+		</div>
+		
+		<div class="page-header">
+			<h2>Overview</h2>
+			<p>
+				Simple Instagram Fancybox is easy to use and has an extensive selection of options. We listened to your feature requests and created a 
+				brand new product that includes them all. See the list below for more details!
+			</p>
+			
+			<h3>Key Features</h3>
+
+			<ul>
+				<li>
+				    <strong>User Instagram Feed Mode -</strong> 
+				    This feed mode allows you to specify a user id to pull in photos from a specific user.
+				</li>
+
+				<li>
+				    <strong>Fancybox 2 Integration</strong> 
+				    Creates a stylish popup shadowbox effect for your gallery.
+				</li>
+				
+				<li>
+				    <strong>Fully Customizable -</strong> 
+				    Features an array of options to allow you to customize your experience to fit your needs.
+				</li>
+			</ul>
+			
+		</div>	
+		
+		<div class="page-header">
+			<h2>Demonstration</h2>
+		</div>
+	
+		<br /><img style="border:solid 1px #EDEDED;" src="css/images/fig-1.jpg" /><br /><br />
+		<br /><img style="border:solid 1px #EDEDED;" src="css/images/fig-2.jpg" /><br /><br />
+		<br /><img style="border:solid 1px #EDEDED;" src="css/images/fig-3.jpg" /><br /><br />
+	
+		<div class="page-header">
+			<h2>Usage</h2>
+		</div>
+		
+		<p>1. First, make sure you are using valid DOCTYPE.</p>
+		<p>2. Include necessary JS files.</p>
+	
+		<pre class="prettyprint">
+&lt;script type="text/javascript" src="../jquery-1.11.0.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="../fancybox2/source/jquery.fancybox.pack.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="../simpleInstagramFancybox.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/demo.js"&gt;&lt;/script&gt;
+	
+</pre>
+
+		<p>3. Include necessary CSS files.</p>
+	
+		<pre class="prettyprint">
+&lt;link href="../fancybox2/source/jquery.fancybox.css" rel="stylesheet" &gt;
+&lt;link href="css/demo.css" rel="stylesheet"&gt;
+&lt;link href="../simpleInstagramFancybox.css" rel="stylesheet"&gt;
+</pre>
+
+		<p>4. Create the HTML container you wish to display your gallery in.</p>
+		
+<pre class="prettyprint">
+	&lt;div class="element"&gt;&lt;/div&gt;
+</pre>
+
+		<p>5. Activate the plugin.</p>
+		
+<pre class="prettyprint">
+$('.element').simpleInstagramFancybox({
+   mode : 'user',
+   userID : 'YOUR_NUMERIC_USERID',
+   accessToken : 'YOUR_ACCESS_TOKEN',
+   speed : 700,
+   delayInterval : 80,
+   appearEffect : 'fade',
+   captionOn : false
+});
+</pre>
+	
+		<div class="page-header">
+			<h2>API & Options</h2>
+		</div>
+		
+		<p>
+			Now that you've installed the plugin and explored the different options, it is time to make some decisions and configure your element. 
+			Take a look at the list below to see the available shortcode options. 
+		</p>
+		
+		<ul>
+			<li><strong>accessToken</strong> - String: This a mandatory setting that allows you to specify a user token.</li>
+			<li><strong>mode</strong> - String: (user) Sets the Instagram feed mode.</li>
+			<li><strong>userID</strong> - String: This is a setting that you have to use if your using "user" mode".</li>
+			<li><strong>speed</strong> - Integer: Sets the speed of the images fade in effect. Default is 700.</li>
+			<li><strong>delayInterval</strong> - Integer: Sets the interval of the delay between photos appearing. Default is 80.</li>
+			<li><strong>appearEffect</strong> - Allows you to set the effect used to show photos. Options include fade,slide,motion. Default is fade.</li>
+			<li><strong>captionOn</strong> - This setting allows you to turn on captions. If this is set to true, it will automatically pull captions in from the instagram feed. Options include true or false.</li>
+		</ul>
+		<br />
+	
+		<div class="page-header">
+			<h2>Instagram API Authentication</h2>
+			<p><a href="http://services.chrisriversdesign.com/how-to-instagram-graph-api-token/" target="_blank">Click here</a> to follow the separate guide on getting your Instagram Token.</p>
+		</div>
+				
+	</div>
+
+  </body>
+</html>
